@@ -44,7 +44,7 @@ Please visit our wiki for furthur project info:
 ### [Team Page](../../wiki/team)
 
 ### Project Documents
-- [Project Idea](docs/idea.pdf) ([Presentation](docs/idea-slides.pdf))
+- [Project Idea](https://github.com/ayalaka/Artop/blob/master/%D7%94%D7%A6%D7%A2%D7%94%20%D7%90%D7%A8%D7%98%D7%95%D7%A4.pdf) ([Presentation](https://github.com/ayalaka/Artop/blob/master/%D7%9E%D7%A6%D7%92%D7%AA%20%D7%90%D7%A8%D7%98%D7%95%D7%A4.pdf))
 - [Project Inception](../../wiki/inception)
 - [Software Requirements Specification](../../wiki/srs)
 - [Software Design Specification](../../wiki/sds)
