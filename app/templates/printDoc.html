@@ -1,0 +1,35 @@
+﻿<!--=====================
+          Content
+======================-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>טפסים להדפסה</title>
+    <script type="text/javascript">
+    function printImg1() {
+        pwin = window.open(document.getElementById("print1").src, "_blank");
+        pwin.onload = function () { window.print(); }
+    }
+    function printImg2() {
+        pwin = window.open(document.getElementById("print2").src, "_blank");
+        pwin.onload = function () { window.print(); }
+    }
+    </script>
+    </head>
+    <body>
+        <div style="float: left; width: 566px; height: 800px;">
+        <img src="../images/print1.png" id="print1"/>
+        <input type="button" value="Print Image1" onclick="printImg1()">
+        </div>
+        <div style="float: right; width: 566px; height:800px;">
+            <img src="../images/print2.png" id="print2">
+            <input type="button" value="Print Image2" onclick="printImg2()" />
+        </div>
+        <p style="clear: both;">
+
+    </body>
+    </html>
+
+
+
+
