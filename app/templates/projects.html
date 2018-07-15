@@ -1,0 +1,85 @@
+﻿<!--=====================
+          Content
+======================-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>פרויקטים</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div style="height:50px;background-color:#5c627c">
+        <h3 style="float:right; padding-left:60px">רשימת פרויקטים</h3>
+    </div>
+    <br />
+    <br />
+    <br />
+    <button style="background-color:#ff9900; font-size:16px" class="btn btn-block" data-toggle="modal" data-target="#myModal" ng-click="addItem()">הוסף חדש</button>
+    <table class="table" style="direction:rtl; display:block; padding-right:50px">
+        <thead style="direction:rtl;font-family:BN Amnesia">
+            <tr>
+                <th style="direction:rtl">סטטוס הפרוייקט</th>
+                <th style="direction:rtl">רמת דחיפות</th>
+                <th style="direction:rtl">צבעים שנבחרו</th>
+                <th style="direction:rtl">חזון</th>
+                <th style="direction:rtl">לוחות זמנים</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="project in projects">
+                <td>{{project.projectStatus}}</td>
+                <td>{{project.urgencyLevel}}</td>
+                <td>{{project.pickupColors}}</td>
+                <td>{{project.vision}}</td>
+                <td>{{project.schedule}}</td>
+                <td><button class="btn " data-toggle="modal" data-target="#myModal2" ng-click="editItem(project)">ערוך</button></td>
+                <td><button class="btn " ng-click="removeItem(project._id,project)">הסר</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Modal for create -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ng-show="displayForm">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <div class="form-group">  <input type="text" ng-model="project.projectStatus" class="form-control" placeholder="סטטוס הפרוייקט" style="direction:rtl" /></div>
+                    <div class="form-group"><input type="text" ng-model="project.urgencyLevel" class="form-control" placeholder="רמת דחיפות" style="direction:rtl" /></div>
+                    <div class="form-group"> <input type="text" ng-model="project.pickupColors" class="form-control" placeholder="צבעים שנבחרו" style="direction:rtl" /></div>
+                    <div class="form-group"> <input type="text" ng-model="project.vision" class="form-control" placeholder="חזון" style="direction:rtl" /></div>
+                    <div class="form-group"> <input type="text" ng-model="project.schedule" class="form-control" placeholder="לוחות זמנים" style="direction:rtl" /></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">סגור</button>
+                    <button class="btn btn-primary" ng-click="create(project)">שמור</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for edit -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ng-show="displayForm2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="form-group">  <input type="text" ng-model="project.projectStatus" class="form-control" placeholder="סטטוס הפרוייקט" style="direction:rtl" /></div>
+                    <div class="form-group"><input type="text" ng-model="project.urgencyLevel" class="form-control" placeholder="רמת דחיפות" style="direction:rtl" /></div>
+                    <div class="form-group"> <input type="text" ng-model="project.pickupColors" class="form-control" placeholder="צבעים שנבחרו" style="direction:rtl" /></div>
+                    <div class="form-group"> <input type="text" ng-model="project.vision" class="form-control" placeholder="חזון" style="direction:rtl" /></div>
+                    <div class="form-group"> <input type="text" ng-model="project.schedule" class="form-control" placeholder="לוחות זמנים" style="direction:rtl" /></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">סגור</button>
+                    <button class="btn btn-primary" ng-click="update(project._id)">עדכן</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="height:60px; background-color:#5c627c"> </div>
+</body>
+</html>
