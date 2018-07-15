@@ -1,0 +1,99 @@
+<!--=====================
+          Content
+======================-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>לקוחות</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div style="height:50px;background-color:#5c627c">
+        <h3 style="float:right; padding-left:60px">רשימת לקוחות</h3>
+    </div>
+    <br>
+    <br>
+    <br>
+    <button style="background-color:#ff9900; font-size:16px" class="btn btn-block" data-toggle="modal" data-target="#myModal3" ng-click="addItem()">הוסף חדש</button>
+    <table class="table" style="direction:rtl; display:block; padding-right:50px">
+        <thead style="direction:rtl;font-family:BN Amnesia">
+            <tr>
+                <th style="direction:rtl">שם הפרוייקט</th>
+                <th style="direction:rtl">שם הלקוח</th>
+                <th style="direction:rtl">כתובת</th>
+                <th style="direction:rtl">טלפון</th>
+                <th style="direction:rtl">מייל</th>
+                <th style="direction:rtl">דרכי התקשרות</th>
+                <th style="direction:rtl">דרכי תשלום</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="patient in patients">
+                <td>{{patient.projectName}}</td>
+                <td>{{patient.patientName}}</td>
+                <td>{{patient.adresse}}</td>
+                <td>{{patient.phone}}</td>
+                <td>{{patient.EMail}}</td>
+                <td>{{patient.communicate}}</td>
+                <td>{{patient.payments}}</td>
+                <td><button class="btn " data-toggle="modal" data-target="#myModal4" ng-click="editItem(patient)">ערוך</button></td>
+                <td><button class="btn " ng-click="removeItem(patient._id,patient)">הסר</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Modal for create -->
+    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ng-show="displayForm">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <div class="form-group">  <input type="text" ng-model="patient.projectName" class="form-control" placeholder="שם הפרוייקט" style="direction:rtl" /></div>
+                    <div class="form-group"><input type="text" ng-model="patient.patientName" class="form-control" placeholder="שם הלקוח" style="direction:rtl" /></div>
+                    <div class="form-group"> <input type="text" ng-model="patient.adresse" class="form-control" placeholder="כתובת" style="direction:rtl" /></div>
+                    <div class="form-group"> <input type="text" ng-model="patient.phone" class="form-control" placeholder="טלפון" style="direction:rtl" /></div>
+                    <div class="form-group"> <input type="text" ng-model="patient.EMail" class="form-control" placeholder="מייל" style="direction:rtl" /></div>
+                    <div class="form-group"> <input type="text" ng-model="patient.communicate" class="form-control" placeholder="דרכי התקשרות" style="direction:rtl" /></div>
+                    <div class="form-group"> <input type="text" ng-model="patient.payments" class="form-control" placeholder="דרכי תשלום" style="direction:rtl" /></div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">סגור</button>
+                    <button class="btn btn-primary" ng-click="create(patient)">שמור</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for edit -->
+    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ng-show="displayForm2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="form-group">  <input type="text" ng-model="patient.projectName" class="form-control" placeholder="שם הפרוייקט" style="direction:rtl" /></div>
+                    <div class="form-group"><input type="text" ng-model="patient.patientName" class="form-control" placeholder="שם הלקוח" style="direction:rtl" /></div>
+                    <div class="form-group"> <input type="text" ng-model="patient.adresse" class="form-control" placeholder="כתובת" style="direction:rtl" /></div>
+                    <div class="form-group"> <input type="text" ng-model="patient.phone" class="form-control" placeholder="טלפון" style="direction:rtl" /></div>
+                    <div class="form-group"> <input type="text" ng-model="patient.EMail" class="form-control" placeholder="מייל" style="direction:rtl" /></div>
+                    <div class="form-group"> <input type="text" ng-model="patient.communicate" class="form-control" placeholder="דרכי התקשרות" style="direction:rtl" /></div>
+                    <div class="form-group"> <input type="text" ng-model="patient.payments" class="form-control" placeholder="דרכי תשלום" style="direction:rtl" /></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">סגור</button>
+                    <button class="btn btn-primary" ng-click="update(patient._id)">עדכן</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="height:60px; background-color:#5c627c"> </div>
+
+</body>
+</html>
+
+
