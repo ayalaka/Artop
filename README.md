@@ -52,9 +52,8 @@ Please visit our wiki for furthur project info:
 ### Iteration Pages
 - [Iteration 0 - ZFR](https://github.com/ayalaka/Artop/wiki)
 - [Iteration 1 - MVP](https://github.com/ayalaka/Artop/wiki/Iteration-1---MVP)
-- [Iteration 2 - Feature X]()
-- [Iteration 3 - Feature Y]()
-- [Iteration 4 - Feature Z]()
+- [Iteration 2 - Feature X](https://github.com/ayalaka/Artop/wiki/Iteration-2---Feature-X)
+- [Iteration 3 - Feature Y](https://github.com/ayalaka/Artop/wiki/Iteration-3---Feature-Y)
 
 
 
